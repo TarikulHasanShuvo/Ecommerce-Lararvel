@@ -13,16 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Front End Route
-Route::get('/', 'HomeController@index');
-Route::get('/single_product/{id}', 'HomeController@single_product')->name('single.product');
-Route::get('/products', 'HomeController@products')->name('products');
-Route::get('/category_product/{id}', 'HomeController@category_product')->name('category.product');
-Route::get('/sub_category_product/{id}', 'HomeController@sub_category_product')->name('sub_category.product');
+Route::get('/', 'MainController@index');
+Route::get('/single_product/{id}', 'MainController@single_product')->name('single.product');
+Route::get('/products', 'MainController@products')->name('products');
+Route::get('/category_product/{id}', 'MainController@category_product')->name('category.product');
+Route::get('/sub_category_product/{id}', 'MainController@sub_category_product')->name('sub_category.product');
 
 
 
 
 // Back End Route
+Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/dashboard', 'AdminController@goDashboard')->name('dashboard');
 Route::post('/admin-dashboard', 'AdminController@dashboard');
@@ -37,6 +38,12 @@ Route::post('/product/{id}', 'ProductController@update')->name('product.update')
 
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+
+
+

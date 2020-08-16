@@ -6,8 +6,10 @@ use App\Product;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class MainController extends Controller
 {
+   
+
     public function index()
     {
         $data= Category::all();
